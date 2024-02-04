@@ -11,14 +11,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="notes-container">
     <div id="notes"></div>
-  </div>
 </template>
 
 <style scoped>
-.notes-container {
-  width: 500px;
-}
 </style>
 
