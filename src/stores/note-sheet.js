@@ -24,6 +24,7 @@ export const useNoteSheetStore = defineStore('noteSheet', {
         containerId: "",
         abcObject: null,
         timingObject: null,
+        isPlaying: false,
         notes: randomNotes(),
     }),
     actions: {
@@ -44,6 +45,7 @@ export const useNoteSheetStore = defineStore('noteSheet', {
             this.notes = notes
             this.timingObject.stop()
             this.timingObject = null
+            this.isPlaying = false
             this.initialize(this.containerId)
         },
         randomizeNotes() {
@@ -51,10 +53,19 @@ export const useNoteSheetStore = defineStore('noteSheet', {
         },
         startPlaying() {
             this.timingObject.start()
+            this.isPlaying = true
+        },
+        pausePlaying() {
+            this.timingObject.pause()
+            this.isPlaying = false
+        },
+        stopPlaying() {
+            this.timingObject.stop()
+            this.isPlaying = false
         },
         resetPlaying() {
             clearAllNotes()
-            this.timingObject.start(0)
+            this.stopPlaying()
         },
         onBeat(beatNumber) {
             audio.play()
@@ -62,9 +73,15 @@ export const useNoteSheetStore = defineStore('noteSheet', {
         },
         eventCallback(event) {
             clearAllNotes()
+
             if(event){
                 event.elements[0][0].style.color = "#b71010"
+            } else {
+                this.isPlaying = false
             }
         }
     },
+    getters: {
+        playing: (state) =>  state.isPlaying
+    }
 })
