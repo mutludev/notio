@@ -1,17 +1,11 @@
 <script setup>
 import NoteSheet from "@/components/note-sheet.vue";
 import ControlButtons from "@/components/control-buttons.vue";
-import Metronome from "@/components/metronome.vue";
-import { onMounted } from "vue";
-import { useNoteSheetStore } from "@/stores/note-sheet";
-const noteSheetStore = useNoteSheetStore();
-
 </script>
 
 <template>
   <div class="container">
-        <metronome />
-        <note-sheet />
+         <note-sheet />
       <control-buttons /> 
   </div>
 </template>
