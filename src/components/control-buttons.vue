@@ -6,7 +6,7 @@ const noteSheetStore = useNoteSheetStore();
 
 <template>
     <div class="buttons">
-        <button @click="noteSheetStore.startPlaying">New Notes</button>
+        <button @click="noteSheetStore.randomizeNotes">New Notes</button>
         <button @click="noteSheetStore.resetPlaying">Restart Playing</button>
     </div>
 </template>
