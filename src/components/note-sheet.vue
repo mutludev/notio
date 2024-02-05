@@ -15,5 +15,8 @@ onMounted(() => {
 </template>
 
 <style scoped>
+  #notes {
+    height: 200px !important;
+  }
 </style>
 
