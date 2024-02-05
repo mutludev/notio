@@ -1,27 +1,26 @@
 <script setup>
-import { useNoteSheetStore } from "@/stores/note-sheet";
-const noteSheetStore = useNoteSheetStore();
+import { useNoteSheetStore } from '@/stores/note-sheet'
+const noteSheetStore = useNoteSheetStore()
 
 function togglePlaying() {
-  if(noteSheetStore.playing) {
+  if (noteSheetStore.playing) {
     noteSheetStore.pausePlaying()
   } else {
     noteSheetStore.startPlaying()
   }
 }
-
 </script>
 
 <template>
-    <div class="buttons">
-        <div>
-          <button @click="togglePlaying">{{ noteSheetStore.playing ? 'Stop' : 'Play' }}</button>
-          <button @click="noteSheetStore.resetPlaying">Restart</button>
-        </div>
-        <div>
-          <button @click="noteSheetStore.randomizeNotes">New Notes</button>
-        </div>
+  <div class="buttons">
+    <div>
+      <button @click="togglePlaying">{{ noteSheetStore.playing ? 'Stop' : 'Play' }}</button>
+      <button @click="noteSheetStore.resetPlaying">Restart</button>
     </div>
+    <div>
+      <button @click="noteSheetStore.randomizeNotes">New Notes</button>
+    </div>
+  </div>
 </template>
 
 <style scoped>

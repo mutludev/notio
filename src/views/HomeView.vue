@@ -1,12 +1,12 @@
 <script setup>
-import NoteSheet from "@/components/note-sheet.vue";
-import ControlButtons from "@/components/control-buttons.vue";
+import NoteSheet from '@/components/note-sheet.vue'
+import ControlButtons from '@/components/control-buttons.vue'
 </script>
 
 <template>
   <div class="container">
-         <note-sheet />
-      <control-buttons /> 
+    <note-sheet />
+    <control-buttons />
   </div>
 </template>
 
@@ -21,6 +21,4 @@ import ControlButtons from "@/components/control-buttons.vue";
   flex-direction: column;
   gap: 20px;
 }
-
 </style>
-
